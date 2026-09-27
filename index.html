@@ -743,6 +743,26 @@
   .btn:hover{background:transparent;color:var(--blue);}
   .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
   .btn-outline:hover{border-color:var(--blue);color:var(--blue);}
+  .amount-picker{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;}
+  .amount-btn{
+    display:inline-block;padding:12px 24px;background:transparent;color:var(--text);font-size:14px;
+    font-weight:600;border:1px solid var(--border);transition:all .25s ease;cursor:pointer;position:relative;
+  }
+  .amount-btn::before{
+    content:"";position:absolute;inset:-6px;pointer-events:none;opacity:0;
+    transition:opacity .25s ease, inset .25s ease;
+    background:
+      linear-gradient(to right, var(--blue) 2px, transparent 2px) top left / 9px 2px no-repeat,
+      linear-gradient(to bottom, var(--blue) 2px, transparent 2px) top left / 2px 9px no-repeat,
+      linear-gradient(to left, var(--blue) 2px, transparent 2px) top right / 9px 2px no-repeat,
+      linear-gradient(to bottom, var(--blue) 2px, transparent 2px) top right / 2px 9px no-repeat,
+      linear-gradient(to right, var(--blue) 2px, transparent 2px) bottom left / 9px 2px no-repeat,
+      linear-gradient(to top, var(--blue) 2px, transparent 2px) bottom left / 2px 9px no-repeat,
+      linear-gradient(to left, var(--blue) 2px, transparent 2px) bottom right / 9px 2px no-repeat,
+      linear-gradient(to top, var(--blue) 2px, transparent 2px) bottom right / 2px 9px no-repeat;
+  }
+  .amount-btn:hover{background:var(--blue);border-color:var(--blue);}
+  .amount-btn:hover::before{opacity:1;inset:-9px;}
   .future-events{margin-top:32px;border-top:1px solid var(--border);padding-top:32px;
     color:var(--text-dim);font-size:14px;}
 
@@ -1195,22 +1215,45 @@
     </div>
   </section>
 
-  <section id="focus" data-hud="Focus">
-    <div class="reveal focus-cycler-wrap">
-      <div class="focus-cycler-label">// FOCUS AREAS</div>
-      <div class="focus-cycler"><span class="focus-cycler-word" id="focusCyclerWord">SCIENCE</span></div>
-      <div class="focus-cycler-bar"><div class="focus-cycler-bar-fill" id="focusCyclerBarFill"></div></div>
-    </div>
-  </section>
-
   <section id="projects" data-hud="Projects">
     <div class="reveal">
       <h2 class="section-title">Projects</h2>
     </div>
     <div class="event-feature reveal">
       <div>
+        <h3>XU Cold Emailer</h3>
+        <p>An AI-powered outreach tool built to eliminate the repetitive work behind professional cold emailing. Paste an entire response from ChatGPT, Claude, Copilot, or any other AI, and XU Cold Emailer automatically turns it into organized, ready-to-send email drafts. Each email is separated into its own card with the recipient, email address, subject, and message, making it easy to review, edit, and open directly in Gmail or Outlook. A built-in tracker helps you keep track of who you have contacted, who is ready to send, and which recipients still need an email address. Designed for students, researchers, and professionals, XU Cold Emailer makes large-scale outreach faster, simpler, and more organized.</p>
+        <a href="https://coldemailer.xuhq.org/" target="_blank" rel="noopener" class="btn" style="margin-top:20px;">Launch XU Cold Emailer</a>
+      </div>
+      <div class="event-meta">
+        <div class="event-meta-row"><div class="label">Status</div><div class="value">Launched</div></div>
+        <div class="event-meta-row"><div class="label">Format</div><div class="value">App</div></div>
+      </div>
+    </div>
+
+    <div class="event-feature reveal">
+      <div>
+        <h3>The $1 Initiative</h3>
+        <p>One dollar. One contribution. One step toward advancing human survival.</p>
+        <p>The $1 Initiative is XU's community-powered research funding initiative. We believe important medical and scientific research should not stop simply because a lab or research group cannot secure enough funding to continue. Through the $1 Initiative, small contributions from people around the world can be pooled together and directed toward promising hospitals, laboratories, researchers, and projects identified by XU. One dollar may be small. Millions of people contributing one dollar is not.</p>
+        <div class="amount-picker">
+          <a href="https://donate.stripe.com/test_00w14oc5gaCw7IxfN3djO00" target="_blank" rel="noopener" class="amount-btn">$1</a>
+          <a href="https://donate.stripe.com/test_dRmcN60my5ic4wl1WddjO01" target="_blank" rel="noopener" class="amount-btn">$5</a>
+          <a href="https://donate.stripe.com/test_00wfZi3yK9ys7IxeIZdjO02" target="_blank" rel="noopener" class="amount-btn">$10</a>
+          <a href="https://donate.stripe.com/test_4gM6oI8T4bGAbYN7gxdjO03" target="_blank" rel="noopener" class="amount-btn">Custom Amount</a>
+        </div>
+      </div>
+      <div class="event-meta">
+        <div class="event-meta-row"><div class="label">Status</div><div class="value">Ongoing</div></div>
+        <div class="event-meta-row"><div class="label">Format</div><div class="value">Fund</div></div>
+      </div>
+    </div>
+
+    <div class="event-feature reveal">
+      <div>
         <h3>HSA — Human Survival Archive</h3>
         <p>An independent science communication initiative documenting the people, ideas, and breakthroughs shaping the future of human survival and space exploration — through interviews with researchers, doctors, engineers, scientists, entrepreneurs, and innovators from around the world, alongside a growing knowledge hub that makes complex research more accessible.</p>
+        <p>Most science communicators focus on explaining discoveries, while most researchers focus on publishing them. HSA's goal is to bridge these worlds by connecting advances in medicine, engineering, space exploration, and entrepreneurship through a single unifying mission: advancing human survival. By bringing together insights from researchers, clinicians, engineers, founders, and innovators, we hope to make complex scientific progress more accessible while highlighting how interdisciplinary collaboration can help solve humanity's greatest challenges both on Earth and beyond.</p>
       </div>
       <div class="event-meta">
         <div class="event-meta-row"><div class="label">Status</div><div class="value">Ongoing</div></div>
